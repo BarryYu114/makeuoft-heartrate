@@ -23,7 +23,7 @@ SevSeg sevseg;
 
 void setup() {
   Serial.begin(115200);
-   byte numDigits = 1;
+   byte numDigits = 4;
     byte digitPins[] = {2, 3, 4, 5};
     byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12, 13};
     bool resistorsOnSegments = true;
@@ -37,8 +37,10 @@ void loop() {
   uint8_t rateValue;
   heartrate.getValue(heartratePin);   // A1 foot sampled values
   rateValue = heartrate.getRate();   // Get heart rate value 
-  if(rateValue)  {
+  if(rateValue > 0)  {
     Serial.println(rateValue);
+
+    // display on 7-seg
     sevseg.setNumber(rateValue);
     sevseg.refreshDisplay();
   }
