@@ -1,3 +1,6 @@
+#include <string>
+#include "upm/jhd1313m1.h
+
 void setup() {
   // put your setup code here, to run once:
   
