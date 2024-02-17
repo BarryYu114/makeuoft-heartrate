@@ -40,8 +40,17 @@ void loop() {
   if(rateValue > 0)  {
     Serial.println(rateValue);
 
+    int hundreds = rateValue/100;
+    int tens = (rateValue/10)%10;
+    int ones rateValue % 10;
+    // separate rateValue into hundreds, tens and ones
+    sevseg.setDigit(0, hundreds);
+    sevseg.setDigit(1, tens);
+    sevseg.setDigit(2, ones);
+    sevseg.setDigit(3, 0);
+
+
     // display on 7-seg
-    sevseg.setNumber(rateValue);
     sevseg.refreshDisplay();
   }
   delay(20);
