@@ -23,9 +23,9 @@ SevSeg sevseg;
 
 void setup() {
   Serial.begin(115200);
-   byte numDigits = 4;
+   byte numDigits = 3;
     byte digitPins[] = {2, 3, 4, 5};
-    byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12, 13};
+    byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12};
     bool resistorsOnSegments = true;
 
     byte hardwareConfig = COMMON_CATHODE; 
@@ -42,12 +42,9 @@ void loop() {
 
     int hundreds = rateValue/100;
     int tens = (rateValue/10)%10;
-    int ones rateValue % 10;
+    int ones = rateValue % 10;
     // separate rateValue into hundreds, tens and ones
-    sevseg.setDigit(0, hundreds);
-    sevseg.setDigit(1, tens);
-    sevseg.setDigit(2, ones);
-    sevseg.setDigit(3, 0);
+   sevseg.setNumber (hundreds*100+tens*10+ones, 3);
 
 
     // display on 7-seg
