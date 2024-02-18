@@ -35,8 +35,11 @@ void setup() {
   pinMode(RED_LED_PIN, OUTPUT);
 
   lcd.begin(16, 2);
+  
+  //initialization set the RGB_LCD to white screen
   lcd.setRGB(255, 255, 255);
-  // Print a message to the LCD.
+  
+  // Print starting message to the LCD.
   lcd.setCursor(0,0);
   lcd.print("Hello user!");
   lcd.display();
@@ -53,13 +56,16 @@ void loop() {
   lcd.display();
 
   uint8_t rateValue;
-  heartrate.getValue(heartratePin);
+  heartrate.getValue(heartratePin); //get from A1
   rateValue = heartrate.getRate(); // Get heart rate value
-  
+
+  //print the heart rate when detected (>0)
   if(rateValue) {
     Serial.println(rateValue);
     lcd.clear();
     displayNumber(rateValue);
+
+    
     if(rateValue < 30){
       lcd.setRGB(255, 0, 0);
       lcd.setCursor(0,0);
