@@ -33,3 +33,13 @@ void loop() {
 }
 
 
+//BMI calculator
+float calculateBMI(float weight, float height) {
+  // Convert height from centimeters to meters
+  float heightInMeters = height / 100.0;
+
+  // Calculate BMI using the formula: weight / (height * height)
+  float bmi = weight / (heightInMeters * heightInMeters);
+
+  return bmi;
+}
