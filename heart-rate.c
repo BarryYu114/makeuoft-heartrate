@@ -30,78 +30,21 @@ void setup() {
 
     byte hardwareConfig = COMMON_CATHODE; 
     sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
-    sevseg.setBrightness(100);
+    sevseg.setBrightness(10);
 }
 
 void loop() {
-  uint8_t rateValue;
+   uint8_t rateValue;
   heartrate.getValue(heartratePin);   // A1 foot sampled values
   rateValue = heartrate.getRate();   // Get heart rate value 
-  
-  if(rateValue){
-    Serial.println(rateValue);
 
-    // separate rateValue into hundreds, tens and ones
-
-   sevseg.setNumber (rateValue, 2);
-
-    // display on 7-seg
+  if(rateValue)  {
+    sevseg.setNumber(rateValue,2);
     sevseg.refreshDisplay();
+    Serial.println(rateValue);
+    delay(1);
   }
-  delay(20);
+  delay(100);
 }
 
-/*
-// Define segment pins
-const int SEGMENT_PINS[] = {2, 3, 4, 5, 6, 7, 8, 9}; // a, b, c, d, e, f, g, DP
-// Define digit pins
-const int DIGIT_PINS[] = {10, 11, 12, 13}; // D1, D2, D3, D4
 
-// Define digit patterns
-const byte DIGIT_PATTERNS[10] = {
-  B11111100, // 0
-  B01100000, // 1
-  B11011010, // 2
-  B11110010, // 3
-  B01100110, // 4
-  B10110110, // 5
-  B10111110, // 6
-  B11100000, // 7
-  B11111110, // 8
-  B11110110  // 9
-};
-
-void setup() {
-  // Set pin modes
-  for (int i = 0; i < 8; i++) {
-    pinMode(SEGMENT_PINS[i], OUTPUT);
-  }
-  for (int i = 0; i < 4; i++) {
-    pinMode(DIGIT_PINS[i], OUTPUT);
-  }
-}
-
-void loop() {
-  int number = 123; // Your 3-digit number
-  displayNumber(number);
-  delay(1000); // Display for 1 second
-}
-
-void displayNumber(int num) {
-  for (int i = 0; i < 3; i++) {
-    int digit = num % 10; // Get the least significant digit
-    num /= 10; // Move to the next digit
-    displayDigit(i, digit);
-    delay(5); // Delay for stability (adjust as needed)
-  }
-}
-
-void displayDigit(int digitNum, int digit) {
-  digitalWrite(DIGIT_PINS[digitNum], LOW); // Activate the digit
-  for (int i = 0; i < 8; i++) {
-    digitalWrite(SEGMENT_PINS[i], (DIGIT_PATTERNS[digit] >> i) & 1);
-  }
-  delay(2); // Delay for stability (adjust as needed)
-  digitalWrite(DIGIT_PINS[digitNum], HIGH); // Deactivate the digit
-}
-*/
