@@ -130,102 +130,103 @@ void clearDigits() {
   }
 }
 
+//segment display for different numbers (1-9)
 void zero(){
-digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, HIGH);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, LOW);
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, HIGH);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, LOW);
   }
 
-  void one(){
-digitalWrite(pinA, LOW);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, LOW);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, LOW);
-digitalWrite(pinG, LOW);
+void one(){
+  digitalWrite(pinA, LOW);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, LOW);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, LOW);
+  digitalWrite(pinG, LOW);
 }
 
 void two(){
   digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, LOW);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, HIGH);
-digitalWrite(pinF, LOW);
-digitalWrite(pinG, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, LOW);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, HIGH);
+  digitalWrite(pinF, LOW);
+  digitalWrite(pinG, HIGH);
   }
   
-  void three(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, LOW);
-digitalWrite(pinG, HIGH);
-    }
+void three(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, LOW);
+  digitalWrite(pinG, HIGH);
+}
     
-  void four(){
-    digitalWrite(pinA, LOW);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, LOW);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, HIGH);
-    }
+void four(){
+  digitalWrite(pinA, LOW);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, LOW);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, HIGH);
+}
     
-  void five(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, LOW);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, HIGH);
-    }
+void five(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, LOW);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, HIGH);
+}
     
-  void six(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, LOW);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, HIGH);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, HIGH);
-    }
+void six(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, LOW);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, HIGH);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, HIGH);
+}
     
-  void seven(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, LOW);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, LOW);
-digitalWrite(pinG, LOW);
-    }
+void seven(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, LOW);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, LOW);
+  digitalWrite(pinG, LOW);
+}
     
-  void eight(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, HIGH);
-digitalWrite(pinE, HIGH);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, HIGH);
-    }
+void eight(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, HIGH);
+  digitalWrite(pinE, HIGH);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, HIGH);
+}
     
-  void nine(){
-    digitalWrite(pinA, HIGH);
-digitalWrite(pinB, HIGH);
-digitalWrite(pinC, HIGH);
-digitalWrite(pinD, LOW);
-digitalWrite(pinE, LOW);
-digitalWrite(pinF, HIGH);
-digitalWrite(pinG, HIGH);
-    }
+void nine(){
+  digitalWrite(pinA, HIGH);
+  digitalWrite(pinB, HIGH);
+  digitalWrite(pinC, HIGH);
+  digitalWrite(pinD, LOW);
+  digitalWrite(pinE, LOW);
+  digitalWrite(pinF, HIGH);
+  digitalWrite(pinG, HIGH);
+}
