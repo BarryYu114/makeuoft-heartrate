@@ -67,7 +67,7 @@ void loop() {
 
     
     if(rateValue < 30){
-      lcd.setRGB(255, 0, 0);
+      lcd.setRGB(255, 0, 0); //set to red background
       lcd.setCursor(0,0);
       lcd.print("BAD!");
       lcd.setCursor(0,1);
@@ -76,8 +76,9 @@ void loop() {
       digitalWrite(RED_LED_PIN, HIGH); // Red LED on
       digitalWrite(GREEN_LED_PIN, LOW);
     }
+      
     else{
-      lcd.setRGB(0,255,0);
+      lcd.setRGB(0,255,0);  //set to green background
       lcd.setCursor(0,0);
       lcd.print("GOOD!");
       lcd.setCursor(0,1);
@@ -88,9 +89,11 @@ void loop() {
     }
     delay(1000); // Delay between updates (adjust as needed)
   }
-  delay(50);
+  delay(50); //delay for incoming heartrate data
 }
 
+//helper function used to display the number
+//displayTime should be consist with the Delay between updates
 void displayNumber(int number) {
   int displayTime = 1000; // Display time in milliseconds
   int startTime = millis();
@@ -100,13 +103,14 @@ void displayNumber(int number) {
       displayDigit(digitValue);
       // Activate the current digit and deactivate others
       for(int i = 0; i < 4; i++) {
-        digitalWrite(digits[i], i == digit ? LOW : HIGH); // Assuming common cathode display
+        digitalWrite(digits[i], i == digit ? LOW : HIGH); // turn on the digits one after one
       }
       delay(5); // Short delay for multiplexing visibility
       clearDigits();
     }
   }
-  clearDigits();
+  //clear to avoid remaining display from precious data
+  clearDigits(); 
 }
 
 
@@ -130,13 +134,15 @@ void displayDigit(int digit) {
   // Ensure you implement zero() through nine() functions to control the segment pins correctly
 }
 
+
+//helper function to initialize the 7-seg-display board
 void clearDigits() {
   for (int i = 0; i < 4; i++) {
     digitalWrite(digits[i], HIGH); // Turn off all digit pins
   }
 }
 
-//segment display for different numbers (1-9)
+//segment display setup for each number (1-9)
 void zero(){
   digitalWrite(pinA, HIGH);
   digitalWrite(pinB, HIGH);
