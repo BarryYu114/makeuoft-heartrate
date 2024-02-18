@@ -27,7 +27,7 @@ void loop() {
     sevseg.setNumber(rateValue,2);
     sevseg.refreshDisplay();
     Serial.println(rateValue);
-    delay(1);
+    delay(1); //set up a small update delay
   }
   delay(100);
 }
