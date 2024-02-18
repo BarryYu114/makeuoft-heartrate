@@ -38,7 +38,7 @@ void loop() {
   heartrate.getValue(heartratePin);   // A1 foot sampled values
   rateValue = heartrate.getRate();   // Get heart rate value 
   
-
+  if(rateValue){
     Serial.println(rateValue);
 
     // separate rateValue into hundreds, tens and ones
@@ -47,8 +47,8 @@ void loop() {
 
     // display on 7-seg
     sevseg.refreshDisplay();
-
-
+  }
+  delay(20);
 }
 
 /*
