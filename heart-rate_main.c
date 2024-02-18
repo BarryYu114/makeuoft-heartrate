@@ -1,4 +1,3 @@
-
 #include "DFRobot_Heartrate.h"
 #define heartratePin A1
 #include <Wire.h>
@@ -50,6 +49,7 @@ void loop() {
   lcd.clear();
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setRGB(255, 255, 255);
   lcd.setCursor(0, 0);
   // print the number of seconds since reset:
   lcd.print("Measuring... ");
@@ -66,13 +66,14 @@ void loop() {
     displayNumber(rateValue);
 
     
-    if(rateValue < 30){
+    if(rateValue < 50 || rateValue > 180){
       lcd.setRGB(255, 0, 0); //set to red background
       lcd.setCursor(0,0);
       lcd.print("BAD!");
       lcd.setCursor(0,1);
       lcd.print("BPM: ");
       lcd.print(rateValue);
+      lcd.display();
       digitalWrite(RED_LED_PIN, HIGH); // Red LED on
       digitalWrite(GREEN_LED_PIN, LOW);
     }
@@ -84,12 +85,14 @@ void loop() {
       lcd.setCursor(0,1);
       lcd.print("BPM: ");
       lcd.print(rateValue);
+      lcd.display();
+
       digitalWrite(RED_LED_PIN, LOW);
       digitalWrite(GREEN_LED_PIN, HIGH); //Green LED
     }
     delay(1000); // Delay between updates (adjust as needed)
   }
-  delay(50); //delay for incoming heartrate data
+  delay(20); //delay for incoming heartrate data
 }
 
 //helper function used to display the number
